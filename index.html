@@ -1,41 +1,35 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="tg">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Харитаи сохторҳои хизматрасонӣ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="style.css">
+    <title>Харитаи сохторҳои хизматрасонӣ</title>
 
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
-    <div class="header-content">
-        <div class="logo">
-            <img src="img/logo (5).png" alt="Логотип Хадамот">
-        </div>
-        <div>
-            <h1>ХАДАМОТИ ТАНЗИМ ДАР СОҲАИ НАҚЛИЁТ</h1>
-            <p>Системаи иттилоотӣ ва харитаи сохторҳо</p>
-        </div>
-    </div>
-</header>
-
 <main class="page">
 
-    <div class="page-title">
-        <h2>Харитаи сохторҳои хизматрасонӣ</h2>
-        <p>
-            Ҷустуҷӯ ва муайян намудани ҷойгиршавии
-            сохторҳои Хадамот дар Ҷумҳурии Тоҷикистон.
-        </p>
-    </div>
+    <section class="page-title">
+        <div>
+            <span class="subtitle">Системаи иттилоотӣ</span>
+            <h1>Харитаи сохторҳои хизматрасонӣ</h1>
+            <p>
+                Ҷустуҷӯ ва муайян намудани ҷойгиршавии
+                сохторҳои хизматрасонӣ дар Ҷумҳурии Тоҷикистон.
+            </p>
+        </div>
+    </section>
 
-    <div class="statistics">
+    <section class="statistics">
+
         <div class="stat">
             <span>Ҳамаи объектҳо</span>
             <strong id="totalCount">0</strong>
@@ -60,14 +54,18 @@
             <span>Нуқтаҳои баркашонӣ</span>
             <strong id="cargoCount">0</strong>
         </div>
-    </div>
+
+    </section>
 
     <section class="map-layout">
 
         <aside class="sidebar">
 
             <div class="sidebar-header">
-                <h3>Ҷустуҷӯи сохторҳо</h3>
+
+                <h2>Ҷустуҷӯи сохторҳо</h2>
+
+                <label for="category">Категория</label>
 
                 <select id="category">
                     <option value="all">Ҳамаи сохторҳо</option>
@@ -78,11 +76,15 @@
                     <option value="barkashoni">Боркашонӣ</option>
                 </select>
 
+                <label for="search">Ҷустуҷӯ</label>
+
                 <input
-                    type="text"
+                    type="search"
                     id="search"
                     placeholder="Номи объектро ворид кунед..."
                 >
+
+                <label for="region">Минтақа</label>
 
                 <select id="region">
                     <option value="all">Ҳамаи минтақаҳо</option>
@@ -92,34 +94,39 @@
                     <option value="ВМКБ">ВМКБ</option>
                     <option value="НТМ">НТМ</option>
                 </select>
+
+                <button id="resetFilters" type="button">
+                    Тоза кардани филтрҳо
+                </button>
+
             </div>
 
             <div class="results-header">
-                <span>Рӯйхати объектҳо</span>
+                <h3>Рӯйхати объектҳо</h3>
                 <span id="resultCount">0</span>
             </div>
 
-            <div id="places"></div>
+            <div id="places" class="places"></div>
 
         </aside>
 
         <div class="map-area">
-            <div class="map-info">
-                📍 Харитаи Ҷумҳурии Тоҷикистон
+
+            <div class="map-label">
+                📍 Ҷумҳурии Тоҷикистон
             </div>
+
             <div id="map"></div>
+
         </div>
 
     </section>
 
 </main>
 
-<footer class="footer">
-    Хадамоти танзим дар соҳаи нақлиёт
-</footer>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 
 </body>
 </html>
+
